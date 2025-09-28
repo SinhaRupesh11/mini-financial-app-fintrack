@@ -15,7 +15,7 @@ const app = express();
 
 // Middleware
 app.use(cors());
-app.use(express.json()); // For parsing application/json
+app.use(express.json()); 
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
@@ -27,7 +27,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/transactions', transactionRoutes);
 app.use('/api/portfolio', portfolioRoutes);
-app.use('/api/watchlist', watchlistRoutes); // Use the new watchlist routes
+app.use('/api/watchlist', watchlistRoutes); 
 
 // Basic Route
 app.get('/', (req, res) => res.send('API running'));

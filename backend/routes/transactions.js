@@ -5,12 +5,12 @@ const Transaction = require('../models/Transaction');
 const User = require('../models/User');
 const Product = require('../models/Product');
 
-// @route   POST /api/transactions/buy
-// @desc    Buy a product and update wallet balance atomically
-// @access  Private
+//    POST /api/transactions/buy
+//     Buy a product and update wallet balance atomically
+//  Private
 router.post('/buy', auth, async (req, res) => {
-    // CRITICAL BACKEND FIX: Ensure units is treated as an integer, 
-    // even if sent as a string from the frontend input field.
+    
+    
     let { productId, units } = req.body;
     units = parseInt(units); 
 
@@ -57,7 +57,7 @@ router.post('/buy', auth, async (req, res) => {
         await newTransaction.save();
 
         // 4. Return the new wallet balance for the frontend to update context
-        // This is crucial for stabilizing the Portfolio Dashboard.
+ 
         res.status(201).json({ 
             msg: 'Purchase successful',
             newWalletBalance: updatedUser.walletBalance

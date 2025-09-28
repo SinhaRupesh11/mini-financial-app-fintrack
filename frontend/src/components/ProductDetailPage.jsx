@@ -52,7 +52,7 @@ export const ProductDetailPage = () => {
         try {
             const res = await api.post('/transactions/buy', {
                 productId: id,
-                units: parseInt(units), // CRITICAL FIX: Ensure units is a number
+                units: parseInt(units), 
             });
             
             // Update user balance in context using the balance returned from the backend

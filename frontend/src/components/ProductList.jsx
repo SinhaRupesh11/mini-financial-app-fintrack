@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './AuthContext.jsx'; // Only import useAuth
-import { api } from '../utils/api.js'; // <-- CORRECTED PATH for API
+import { useAuth } from './AuthContext.jsx'; 
+import { api } from '../utils/api.js'; 
 import { Card, Button, MetricCard, Message, Spinner } from './CommonComponents.jsx';
 import { formatCurrency } from './PageUtils.jsx';
 import { Eye, EyeOff, Wallet, TrendingUp } from 'lucide-react';

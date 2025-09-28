@@ -36,7 +36,7 @@ export const SignupPage = () => {
             // Navigate to login page on success
             navigate('/login', { state: { signupSuccess: true } });
         } catch (err) {
-            // Error handling managed by AuthContext
+            
         }
     };
 

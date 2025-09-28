@@ -11,7 +11,7 @@ import { ProductList } from './components/ProductList.jsx';
 import { ProductDetailPage } from './components/ProductDetailPage.jsx';
 import { PortfolioDashboard } from './components/PortfolioDashboard.jsx';
 
-// --- Loading Component (Placeholder for blank screen) ---
+
 const FullScreenLoader = () => (
     <div className="flex items-center justify-center min-h-screen bg-gray-50">
         <div className="text-purple-600 animate-pulse text-xl">Loading Application...</div>
@@ -24,7 +24,7 @@ const AppContent = () => {
     // Access the loading state from context. This prevents the crash.
     const { loading } = useAuth(); 
 
-    // CRITICAL FIX: If loading is true, render ONLY the loader.
+    
     if (loading) {
         return <FullScreenLoader />;
     }

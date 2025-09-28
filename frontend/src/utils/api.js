@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // --- Configuration ---
-// Ensure this matches your backend server URL
+
 const API_BASE_URL = 'http://localhost:5000/api'; 
 
 // --- 1. Create the API Instance with Interceptors ---
@@ -28,17 +28,15 @@ api.interceptors.request.use(config => {
 api.interceptors.response.use(
     response => response,
     error => {
-        // CRITICAL FIX: Check for error.response existence before reading status.
+    
         // This prevents crashes on network errors (e.g., server offline).
         if (error.response?.status === 401) {
-            // Clear the invalid token
+           
             localStorage.removeItem('token');
             
-            // Force a browser redirect to the login page
             // We use window.location.href because React Router hooks aren't available here.
             window.location.href = '/login'; 
             
-            // Return a promise that never resolves to stop downstream .catch() blocks 
             // from running in the component.
             return new Promise(() => {}); 
         }

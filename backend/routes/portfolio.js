@@ -5,9 +5,9 @@ const Transaction = require('../models/Transaction');
 const Product = require('../models/Product');
 const mongoose = require('mongoose');
 
-// @route   GET /api/portfolio
-// @desc    Get user portfolio summary and holdings
-// @access  Private
+//   GET /api/portfolio
+//    Get user portfolio summary and holdings
+//  Private
 router.get('/', auth, async (req, res) => {
     try {
         // Step 1: Aggregate transactions for the logged-in user

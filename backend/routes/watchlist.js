@@ -3,18 +3,18 @@ const router = express.Router();
 const auth = require('../middleware/auth');
 const Watchlist = require('../models/Watchlist');
 
-// @route   GET /api/watchlist
-// @desc    Get user's watchlist items
-// @access  Private
+//    GET /api/watchlist
+//     Get user's watchlist items
+// Private
 router.get('/', auth, async (req, res) => {
     try {
         // Find all watchlist entries for the user and populate the associated product details.
         const watchlistItems = await Watchlist.find({ userId: req.user.id })
-            // CRITICAL: Populate the product data linked by productId
+           
             .populate('productId', 'name pricePerUnit category keyMetric') 
-            .lean(); // Convert Mongoose documents to plain JS objects for clean manipulation
+            .lean(); 
 
-        // Reformat the output to match the desired frontend structure: [{ product: {...} }, ...]
+        
         const formattedWatchlist = watchlistItems.map(item => ({
             product: item.productId, // This now holds the populated product object
             _id: item._id // Keep the watchlist item ID for easy deletion
@@ -28,9 +28,9 @@ router.get('/', auth, async (req, res) => {
     }
 });
 
-// @route   POST /api/watchlist
-// @desc    Add a product to the watchlist
-// @access  Private
+//    POST /api/watchlist
+//    Add a product to the watchlist
+// Private
 router.post('/', auth, async (req, res) => {
     const { productId } = req.body;
 

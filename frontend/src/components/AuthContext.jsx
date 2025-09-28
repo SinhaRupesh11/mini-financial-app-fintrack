@@ -6,7 +6,7 @@ import { api } from '../utils/api.js';
 const AuthContext = createContext();
 
 // --- 2. Custom Hook for easy consumption ---
-// Export the hook here, separate from the provider
+
 export const useAuth = () => {
     return useContext(AuthContext);
 };

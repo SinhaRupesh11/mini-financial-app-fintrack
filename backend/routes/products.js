@@ -25,9 +25,9 @@ const generateHistoricalData = () => {
   return data;
 };
 
-// @route   GET /api/products
-// @desc    Get all products
-// @access  Private
+//    GET /api/products
+//     Get all products
+//   Private
 router.get('/', auth, async (req, res) => {
     try {
         const products = await Product.find();
@@ -38,9 +38,9 @@ router.get('/', auth, async (req, res) => {
     }
 });
 
-// @route   GET /api/products/:id
-// @desc    Get a single product with dummy details
-// @access  Private
+//   GET /api/products/:id
+//  Get a single product with dummy details
+//   Private
 router.get('/:id', auth, async (req, res) => {
     try {
         const product = await Product.findById(req.params.id);

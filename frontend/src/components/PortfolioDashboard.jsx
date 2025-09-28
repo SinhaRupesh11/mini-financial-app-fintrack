@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from './AuthContext.jsx'; 
 import { api } from '../utils/api.js';
-// CRITICAL FIX: Import Button component here
+
 import { Card, MetricCard, Message, Spinner, Button } from './CommonComponents.jsx';
 import { formatCurrency } from './PageUtils.jsx';
 import { Wallet, TrendingUp, DollarSign } from 'lucide-react';
