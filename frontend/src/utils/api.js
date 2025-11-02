@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+
 // --- Configuration ---
 
-const API_BASE_URL = 'http://localhost:5000/api'; 
+// const API_BASE_URL = 'http://localhost:5000/api'; 
+const API_BASE_URL = 'https://fintrack-api-g6kt.onrender.com/api'; 
 
 // --- 1. Create the API Instance with Interceptors ---
 export const api = axios.create({
